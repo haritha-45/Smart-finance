@@ -1,0 +1,9 @@
+sudo dnf install bzip2 ccache chrpath cpio cpp diffstat diffutils file findutils gawk gcc gcc-c++ git glibc-devel glibc-langpack-en gzip hostname libacl make patch perl perl-Data-Dumper perl-File-Compare perl-File-Copy perl-FindBin perl-Text-ParseWords perl-Thread-Queue perl-bignum perl-locale python python3 python3-GitPython python3-jinja2 python3-pexpect python3-pip python3-websockets rpcgen socat tar texinfo unzip wget which xz zstd $([ $(rpm -E %fedora) -ge 42 ] && echo "util-linux-script")
+
+sudo dnf install git glibc-locale-source librsvg2-tools make python3-pip which
+
+python3 -m venv --clear ./yocto-docs-venv
+. ./yocto-docs-venv/bin/activate
+python3 -m pip install sphinx sphinx_rtd_theme pyyaml sphinx-copybutton 'sphinxcontrib-svg2pdfconverter>=2.0.0'
+
+sudo dnf install 'texlive-collection-lang*' latexmk texlive-collection-fontsextra texlive-collection-fontsrecommended texlive-collection-latex texlive-collection-latexextra texlive-collection-latexrecommended texlive-collection-xetex texlive-fncychap texlive-gnu-freefont texlive-tex-gyre texlive-xetex
